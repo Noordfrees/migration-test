@@ -1,0 +1,27 @@
+name: Test
+on:
+  push:
+  pull_request:
+
+jobs:
+  this_always_succeeds:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Hello World
+      run: echo "Hello World"
+
+  this_always_fails_2:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Generate an Error
+      run: test 5 -eq 42
+
+  this_always_fails_1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Hello World
+      run: echo "Hello World"
+    - name: Error out
+      run: |
+        echo "Error!!!"
+        exit 1
