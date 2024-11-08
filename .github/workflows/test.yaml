@@ -24,4 +24,5 @@ jobs:
     - name: Error out
       run: |
         echo "Error!!!"
+        echo "::warning::Hello World: This is a test warning."
         exit 1
