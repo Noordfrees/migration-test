@@ -14,7 +14,6 @@ body:
 
         If you post a crash log below, please describe what kind of game you played,
         what was going on in the game, and what you did last before the game crashed.
-        If it is reproducible, please fill the next section too.
     validations:
       required: true
 
@@ -23,7 +22,7 @@ body:
     attributes:
       label: To Reproduce
       description: Steps to reproduce the behavior
-      placeholder: |
+      value: |
         1. Go to '...'
         2. Click on '....'
         3. Scroll down to '....'
@@ -43,7 +42,8 @@ body:
     id: crashlog
     attributes:
       label: Crash Log
-      description: If you report a crash, paste or upload the crash log here.
+      description: If you report a crash, paste the crash log here.
+      render: text
 
   - type: textarea
     id: screenshots
@@ -78,6 +78,8 @@ body:
       label: Widelands Version
       description: The version of Widelands.
       placeholder: e.g. "v1.2", "73f9eb5c0b26599b72609f3e27de569f49049269"
+    validations:
+      required: true
 
   - type: textarea
     id: addons-versions
