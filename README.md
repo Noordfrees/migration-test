@@ -2,4 +2,4 @@
 
 Dummy repo to test the [GitHub / Codeberg mirror bot](https://codeberg.org/wl/GithubCodebergMirror).
 
-Edited in a pull request.
+Edited in a pull request again.
