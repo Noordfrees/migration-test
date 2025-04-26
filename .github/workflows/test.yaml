@@ -1,6 +1,5 @@
 name: Test
 on:
-  push:
   pull_request:
 
 jobs:
@@ -10,18 +9,13 @@ jobs:
     - name: Hello World
       run: echo "Hello World"
 
-  this_always_fails_2:
+  this_always_fails_3:
     runs-on: ubuntu-latest
     steps:
-    - name: Generate an Error
-      run: test 5 -eq 42
-
-  this_always_fails_1:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Hello World
-      run: echo "Hello World"
-    - name: Error out
+    - name: Long error message
       run: |
-        echo "Error!!!"
+        for ((i=100000;i>=0;--i))
+        do
+          echo "Error $i!"
+        done
         exit 1
