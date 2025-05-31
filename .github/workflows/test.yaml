@@ -12,10 +12,13 @@ jobs:
   this_always_fails_3:
     runs-on: ubuntu-latest
     steps:
-    - name: Long error message
+    - name: Long message
       run: |
         for ((i=100000;i>=0;--i))
         do
-          echo "Error $i!"
+          echo "Line $i"
         done
+    - name: Error out
+      run: |
+        echo "Hello World"
         exit 1
