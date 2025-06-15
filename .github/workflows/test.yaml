@@ -1,6 +1,5 @@
 name: Test
 on:
-  push:
   pull_request:
 
 jobs:
@@ -10,18 +9,34 @@ jobs:
     - name: Hello World
       run: echo "Hello World"
 
-  this_always_fails_2:
+  this_always_fails_3:
     runs-on: ubuntu-latest
     steps:
-    - name: Generate an Error
-      run: test 5 -eq 42
-
-  this_always_fails_1:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Hello World
-      run: echo "Hello World"
+    - name: First Long message
+      run: |
+        for ((i=1000;i>=0;--i))
+        do
+          echo "Line $i"
+        done
+    - name: Second Long message
+      run: |
+        for ((i=1000;i>=0;--i))
+        do
+          echo "Line $i"
+        done
+    - name: Third Long message
+      run: |
+        for ((i=1000;i>=0;--i))
+        do
+          echo "Line $i"
+        done
+    - name: Fourth Long message
+      run: |
+        for ((i=1000;i>=0;--i))
+        do
+          echo "Line $i"
+        done
     - name: Error out
       run: |
-        echo "Error!!!"
+        echo "Hello World"
         exit 1
