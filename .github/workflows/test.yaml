@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Generate an Error
-      run: test 5 -eq 42
+      run: test 5 -eq 5
 
   this_always_fails_1:
     runs-on: ubuntu-latest
@@ -23,5 +23,6 @@ jobs:
       run: echo "Hello World"
     - name: Error out
       run: |
-        echo "Error!!!"
-        exit 1
+        echo "No error for this PR!"
+        sleep 4m
+        exit 0
